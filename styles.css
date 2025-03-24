@@ -1,1 +1,122 @@
+body {
+  /* font, background color, and making sure the text color isnt unreadable */
+    font-family: Arial, sans-serif; 
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+  /* header color background plus text */
+header, .header {
+    background-color: #2c3e50; 
+    color: white; 
+    padding: 20px;
+    text-align: center;
+}
+/* navigation bar color and allignment */
+nav {
+    background-color: #34495e; 
+    padding: 10px 0;
+    text-align: center;
+}
+nav a {
+  /* navigation tab colors + margin */
+    color: white; 
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+/* letting the user know when tey are hovering over a link */
+nav a:hover {
+    color: #1abc9c; 
+}
+/* main containers + rounded containers*/
+.container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* section header colors */
+h1, h2, h3 {
+    color: #2c3e50; 
+    margin-bottom: 10px;
+}
+/* paragraph color + spacin */
+p {
+    line-height: 1.6; 
+    margin-bottom: 15px; 
+}
+/* link color + underline removed */
+a {
+    color: #3498db; 
+    text-decoration: none; 
+}
+/* for when hovering over links */
+a:hover {
+    color: #1abc9c;
+}
+/* footer color + padding */
+footer {
+    background-color: #333; 
+    color: white; 
+    padding: 10px 0;
+    text-align: center;
+}
+/* the form section coloring and containers */
+form {
+    background-color: #fff; 
+    padding: 20px;
+    border-radius: 8px;  
+}
+/* form input containers */
+input[type="text"], input[type="email"], input[type="password"], input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 15px 0;
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+}
+/* submit button */
+input[type="submit"] {
+    background-color: #3498db; 
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+/* for when hovering over the submit button */
+input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+/* table styles*/
+table {
+    width: 100%;
+    border-collapse: collapse; 
+    margin-bottom: 20px;
+}
+table, th, td {
+    border: 1px solid #ddd; 
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+th {
+    background-color: #34495e; 
+    color: white;
+}
+/*mobile first best practice increasing accessability*/
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+    nav {
+        font-size: 14px; 
+    }
 
+    input[type="text"], input[type="email"], input[type="password"], input[type="submit"] {
+        width: 100%;
+    }
+}
