@@ -19,10 +19,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = sanitize_input($_POST['password']);
     $terms = isset($_POST['terms']) ? true : false;
 
-    // Validate required fields
+    // validate required fields
     if (empty($first_name) || empty($last_name) || empty($email) || empty($state) || empty($username) || empty($password) || !$terms) {
         $_SESSION['error'] = "Please fill out all required fields and agree to the terms.";
-        header("Location: signup_form.php"); 
+        header("Location: WebsiteAssignmentSignUpFriedman.html");
         exit();
     }
 
@@ -45,11 +45,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     fclose($file);
 
     $_SESSION['success'] = "Thank you for signing up! Your information has been submitted.";
-    header("Location: signup_success.php"); // Redirect to success page
+    header("Location: signup_success.php"); // this one is OK
     exit();
 } else {
     $_SESSION['error'] = "Invalid form submission.";
-    header("Location: signup_form.php");
+    header("Location: WebsiteAssignmentSignUpFriedman.html");
     exit();
 }
 ?>
