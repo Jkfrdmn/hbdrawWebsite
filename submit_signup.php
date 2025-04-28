@@ -1,14 +1,12 @@
 <?php
-
 session_start();
 
 function sanitize_input($data) {
     return htmlspecialchars(trim($data));
 }
 
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
+
     $first_name = sanitize_input($_POST['first_name']);
     $last_name = sanitize_input($_POST['last_name']);
     $email = sanitize_input($_POST['email']);
@@ -21,14 +19,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = sanitize_input($_POST['password']);
     $terms = isset($_POST['terms']) ? true : false;
 
-   
+    // Validate required fields
     if (empty($first_name) || empty($last_name) || empty($email) || empty($state) || empty($username) || empty($password) || !$terms) {
         $_SESSION['error'] = "Please fill out all required fields and agree to the terms.";
-        header("Location: signup_form.php");
+        header("Location: signup_form.php"); // (Update this if your form page name is different)
         exit();
     }
 
-    
+    // Save data (for now to a text file)
     $data = [
         'first_name' => $first_name,
         'last_name' => $last_name,
@@ -39,20 +37,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         'state' => $state,
         'zip_code' => $zip_code,
         'username' => $username,
-        'password' => password_hash($password, PASSWORD_DEFAULT),  // Storing hashed password
+        'password' => password_hash($password, PASSWORD_DEFAULT),
     ];
 
-   
     $file = fopen("submissions.txt", "a");
     fwrite($file, json_encode($data) . PHP_EOL);
     fclose($file);
 
-
     $_SESSION['success'] = "Thank you for signing up! Your information has been submitted.";
-    header("Location: signup_success.php");
+    header("Location: signup_success.php"); // Redirect to success page
     exit();
 } else {
- 
     $_SESSION['error'] = "Invalid form submission.";
     header("Location: signup_form.php");
     exit();
