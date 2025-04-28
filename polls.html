@@ -110,11 +110,12 @@
       "Cleveland Cavaliers": 0,
       "Houston Rockets": 0,
       "Boston Celtics": 0,
-     "OKC Thunder": 0
-      "Minnesota Timberwolves": 0
+     "OKC Thunder": 0,
+      "Minnesota Timberwolves": 0,
       "New York Knicks": 0,
       "Other": 0
     };
+localStorage.removeItem('sportsGameVotes');
 
     if (localStorage.getItem('sportsGameVotes')) {
       votes = JSON.parse(localStorage.getItem('sportsGameVotes'));
