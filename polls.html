@@ -1,1 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <link rel="stylesheet" href="styles.css">
 
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-877KHFFLBH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-877KHFFLBH');
+</script>
+ 
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>HB Draw - Polls</title>
+
+ <style>
+    .poll-bar-container {
+      background-color: #eee;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 15px;
+    }
+    .poll-bar {
+      height: 25px;
+      background-color: #3498db;
+      text-align: right;
+      padding-right: 10px;
+      line-height: 25px;
+      color: white;
+      border-radius: 20px 0 0 20px;
+      width: 0%;
+      transition: width 0.6s ease;
+    }
+    .container {
+      padding: 20px;
+    }
+ </style>
+
+</head>
+
+<body>
+
+<!-- Header -->
+<table width="100%" bgcolor="#d3d3d3" cellpadding="10">
+    <tr>
+        <td width="20%"><h2>HB DRAW</h2></td>
+        <td width="40%" align="center">
+            <a href="index.html">Home Page</a> | 
+            <a href="WebsiteAssignmentSignUpFriedman.html">Sign Up</a> | 
+            <a href="WebsiteAssignmentBlogsFriedman.html">Blogs</a> |
+            <b>Polls</b>
+        </td>
+        <td width="30%" align="center">
+            <input type="text" placeholder="Search Bar">
+        </td>
+        <td width="10%" align="right">Sign In</td>
+    </tr>
+</table>
+
+<!-- Main Content -->
+<table width="100%" cellpadding="10">
+    <tr>
+        <td>
+            <div class="container">
+                <h2>Vote for Your Favorite Sports Game!</h2>
+
+                <form id="pollForm">
+                    <label><input type="radio" name="game" value="Madden NFL" required> Madden NFL</label><br>
+                    <label><input type="radio" name="game" value="FIFA"> FIFA</label><br>
+                    <label><input type="radio" name="game" value="NBA 2K"> NBA 2K</label><br>
+                    <label><input type="radio" name="game" value="MLB The Show"> MLB The Show</label><br>
+                    <label><input type="radio" name="game" value="WWE 2K"> WWE 2K</label><br><br>
+
+                    <input type="submit" value="Submit Vote">
+                </form>
+
+                <div id="results" style="display:none; margin-top:30px;">
+                    <h3>Poll Results:</h3>
+                    <div id="resultsBars"></div>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<!-- Footer -->
+<table width="100%" bgcolor="#d3d3d3" cellpadding="10">
+    <tr>
+        <td width="50%">
+            <p>Contact Us</p>
+            <p>hbdraw@gmail.com</p>
+            <p>443-545-6551</p>
+        </td>
+        <td width="50%" align="right">
+            <h2>HB DRAW</h2>
+            <p>&copy; 2024 - 2025 HB Draw. All Rights Reserved</p>
+        </td>
+    </tr>
+</table>
+
+<!-- Poll Script -->
+<script>
+    let votes = {
+      "Madden NFL": 0,
+      "FIFA": 0,
+      "NBA 2K": 0,
+      "MLB The Show": 0,
+      "WWE 2K": 0
+    };
+
+    if (localStorage.getItem('sportsGameVotes')) {
+      votes = JSON.parse(localStorage.getItem('sportsGameVotes'));
+    }
+
+    document.getElementById('pollForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const selectedGame = document.querySelector('input[name="game"]:checked').value;
+      votes[selectedGame]++;
+      localStorage.setItem('sportsGameVotes', JSON.stringify(votes));
+
+      displayResults();
+    });
+
+    function displayResults() {
+      const resultsDiv = document.getElementById('results');
+      const resultsBars = document.getElementById('resultsBars');
+      resultsBars.innerHTML = '';
+
+      let totalVotes = 0;
+      for (const game in votes) {
+        totalVotes += votes[game];
+      }
+
+      for (const game in votes) {
+        const percent = totalVotes ? ((votes[game] / totalVotes) * 100).toFixed(1) : 0;
+
+        const container = document.createElement('div');
+        container.innerHTML = `
+          <strong>${game}</strong> (${votes[game]} votes - ${percent}%)
+          <div class="poll-bar-container">
+            <div class="poll-bar" style="width:${percent}%">${percent > 5 ? percent + '%' : ''}</div>
+          </div>
+        `;
+        resultsBars.appendChild(container);
+      }
+
+      resultsDiv.style.display = 'block';
+    }
+
+    if (localStorage.getItem('sportsGameVotes')) {
+      displayResults();
+    }
+</script>
+
+</body>
+</html>
