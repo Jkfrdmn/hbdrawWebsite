@@ -22,11 +22,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate required fields
     if (empty($first_name) || empty($last_name) || empty($email) || empty($state) || empty($username) || empty($password) || !$terms) {
         $_SESSION['error'] = "Please fill out all required fields and agree to the terms.";
-        header("Location: signup_form.php"); // (Update this if your form page name is different)
+        header("Location: signup_form.php"); 
         exit();
     }
 
-    // Save data (for now to a text file)
+    // save the data
     $data = [
         'first_name' => $first_name,
         'last_name' => $last_name,
