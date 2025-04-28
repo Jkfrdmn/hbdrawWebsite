@@ -6,6 +6,7 @@ body {
     padding: 0;
 }
 
+/* header color background plus text */
 header, .header {
     background-color: #2c3e50; 
     color: white; 
@@ -13,6 +14,7 @@ header, .header {
     text-align: center;
 }
 
+/* navigation bar color and alignment */
 nav {
     background-color: #34495e; 
     padding: 10px 0;
@@ -24,10 +26,13 @@ nav a {
     text-decoration: none;
     font-weight: bold;
 }
+
+/* letting the user know when they are hovering over a link */
 nav a:hover {
     color: #1abc9c; 
 }
 
+/* main containers + rounded containers */
 .container {
     width: 80%;
     margin: 20px auto;
@@ -37,24 +42,30 @@ nav a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* section header colors */
 h1, h2, h3 {
     color: #2c3e50; 
     margin-bottom: 10px;
 }
 
+/* paragraph color + spacing */
 p {
     line-height: 1.6; 
     margin-bottom: 15px; 
 }
 
+/* link color + underline removed */
 a {
     color: #3498db; 
     text-decoration: none; 
 }
+
+/* for when hovering over links */
 a:hover {
     color: #1abc9c;
 }
 
+/* footer color + padding */
 footer {
     background-color: #333; 
     color: white; 
@@ -62,44 +73,33 @@ footer {
     text-align: center;
 }
 
-/* form styles */
+/* the form section coloring and containers */
 form {
     background-color: #fff; 
     padding: 20px;
     border-radius: 8px;  
 }
 
-/* NEW Modern Inputs Styling */
+/* input boxes (text, email, password) */
 input[type="text"], input[type="email"], input[type="password"] {
-    width: 100%;
-    padding: 12px 15px;
-    margin: 10px 0 20px 0;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    font-size: 1rem;
-    transition: border-color 0.3s ease, background-color 0.3s ease;
-}
-
-input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
-    border-color: #3498db;
-    background-color: #fff;
-    outline: none;
+    width: 250px; /* smaller width */
+    padding: 6px 10px;
+    margin: 8px 0 15px 0;
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
 }
 
 /* submit button */
 input[type="submit"] {
-    width: 100%;
-    padding: 12px 15px;
+    padding: 8px 15px;
     background-color: #3498db; 
     color: white;
     border: none;
-    border-radius: 8px;
-    font-size: 1rem;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
+/* hover effect for submit button */
 input[type="submit"]:hover {
     background-color: #2980b9;
 }
@@ -110,19 +110,22 @@ table {
     border-collapse: collapse; 
     margin-bottom: 20px;
 }
+
 table, th, td {
     border: 1px solid #ddd; 
 }
+
 th, td {
     padding: 10px;
     text-align: left;
 }
+
 th {
     background-color: #34495e; 
     color: white;
 }
 
-/* responsive/mobile styles */
+/* mobile-first best practice for responsiveness */
 @media (max-width: 768px) {
     .container {
         width: 95%;
@@ -130,8 +133,7 @@ th {
     nav {
         font-size: 14px; 
     }
-
-    input[type="text"], input[type="email"], input[type="password"], input[type="submit"] {
-        width: 100%;
+    input[type="text"], input[type="email"], input[type="password"] {
+        width: 100%; /* on smaller screens */
     }
 }
