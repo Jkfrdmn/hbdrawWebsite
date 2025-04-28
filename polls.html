@@ -66,14 +66,14 @@
     <tr>
         <td>
             <div class="container">
-                <h2>Vote for Your Favorite Sports Game!</h2>
+                <h2>Who are you rooting for in the NBA Playoffs?</h2>
 
                 <form id="pollForm">
-                    <label><input type="radio" name="game" value="Madden NFL" required> Madden NFL</label><br>
-                    <label><input type="radio" name="game" value="FIFA"> FIFA</label><br>
-                    <label><input type="radio" name="game" value="NBA 2K"> NBA 2K</label><br>
-                    <label><input type="radio" name="game" value="MLB The Show"> MLB The Show</label><br>
-                    <label><input type="radio" name="game" value="WWE 2K"> WWE 2K</label><br><br>
+                    <label><input type="radio" name="game" value="Cleveland Cavaliers" required> The Cleveland Cavaliers</label><br>
+                    <label><input type="radio" name="game" value="Houston Rockets"> Houston Rockets</label><br>
+                    <label><input type="radio" name="game" value="Boston Celtics"> Boston Celtics</label><br>
+                    <label><input type="radio" name="game" value="New York Knicks"> New York Knicks</label><br>
+                    <label><input type="radio" name="game" value="Minnesota Timberwolves"> Minnesota Timberwolves</label><br><br>
 
                     <input type="submit" value="Submit Vote">
                 </form>
@@ -105,11 +105,11 @@
 <!-- Poll Script -->
 <script>
     let votes = {
-      "Madden NFL": 0,
-      "FIFA": 0,
-      "NBA 2K": 0,
-      "MLB The Show": 0,
-      "WWE 2K": 0
+      "Cleveland Cavaliers": 0,
+      "Houston Rockets": 0,
+      "Boston Celtics": 0,
+      "New York Knicks": 0,
+      "Minnesota Timberwolves": 0
     };
 
     if (localStorage.getItem('sportsGameVotes')) {
