@@ -14,41 +14,91 @@
     gtag('js', new Date());
     gtag('config', 'G-877KHFFLBH');
   </script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 15px 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    .container {
+      width: 90%;
+      margin: auto;
+      padding: 20px 0;
+    }
+    main {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+    section.about {
+      background-color: #005580;
+      color: white;
+      padding: 40px 20px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+    footer {
+      background-color: #003366;
+      color: white;
+      padding: 20px 0;
+    }
+    footer p {
+      margin: 5px 0;
+    }
+    .flex-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+    }
+    .flex-row > div {
+      flex: 1;
+      min-width: 280px;
+    }
+    img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    ol li {
+      margin-bottom: 8px;
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-  <div class="container">
-    <div style="display: flex; justify-content: space-between; align-items: center;">
-      <div><h2>HB DRAW</h2></div>
-      <nav>
-        <a href="index.html">Home</a> |
-        <a href="signup.html">Sign Up</a> |
-        <a href="blogs.html">Blogs</a> |
-        <a href="#">Polls</a>
-      </nav>
-      <div>
-        <form action="search.html" method="get" style="display: inline;">
-          <input type="text" name="query" placeholder="Search...">
-        </form>
-        <span style="margin-left:10px;">Sign In</span>
-      </div>
-    </div>
+  <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+    <h2>HB DRAW</h2>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="signup.html">Sign Up</a>
+      <a href="blogs.html">Blogs</a>
+      <a href="#">Polls</a>
+    </nav>
   </div>
 </header>
 
 <main class="container">
 
-  <section style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
-    <div style="flex: 2;">
-      <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e6849a35-08d9-4bf0-9ae0-a04fbe4c2eee/df027vf-1c28cc79-060c-4cff-a825-b4886be22e17.png" width="100%" alt="Super Bowl LIX Concept Logo">
-    </div>
-    <div style="flex: 1;">
+  <div class="flex-row">
+    <div>
       <h3>Headline Information</h3>
       <p>The Super Bowl is HERE. Today, 2/9/2025, at 6:30 PM EST, featuring the Kansas City Chiefs against the Philadelphia Eagles.</p>
-    </div>
-    <div style="flex: 1;">
+
+      <h4>Top Stories:</h4>
       <ol>
         <li>The City of Philadelphia IS LIVID after SUPER BOWL WIN!</li>
         <li>Do the New York Knicks have ENOUGH IN THE TANK!</li>
@@ -57,27 +107,31 @@
         <li>Entering the NFL Offseason with the Ravens</li>
       </ol>
     </div>
-  </section>
+
+    <div>
+      <img src="/mnt/data/a466131d-e552-4f82-87cb-9054d02614f9.png" alt="Sports Equipment">
+    </div>
+  </div>
 
 </main>
 
-<section style="background-color: #33a6bb; padding: 20px;">
-  <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px;">
-    <div style="flex: 1;">
-      <h3 style="color: white;">About Us</h3>
-      <p style="color: white;">HB Draw is a blog site dedicated to engaging and entertaining fans in primarily sports media. Though we aim to express sports media, that doesn’t mean we don’t have room to touch on other media outlets.</p>
-      <p style="color: white;">On our site you'll find lots of blogs about the sporting world on and off the field. Along with our blogs, we have a polls feature that allows you to pick who you think will win some of the week's highly anticipated matchups!</p>
+<section class="about">
+  <div class="container flex-row">
+    <div>
+      <h3>About Us</h3>
+      <p>HB Draw is a blog site dedicated to engaging and entertaining fans in primarily sports media. Though we aim to express sports media, that doesn’t mean we don’t have room to touch on other media outlets.</p>
+      <p>On our site you'll find lots of blogs about the sporting world on and off the field. Along with our blogs, we have a polls feature that allows you to pick who you think will win some of the week's highly anticipated matchups!</p>
     </div>
-    <div style="flex: 1;">
-      <img src="https://wallpaper.dog/large/10716322.jpg" width="100%" alt="Sports Fans Celebrating">
+    <div>
+      <img src="https://wallpaper.dog/large/10716322.jpg" alt="Fans Cheering">
     </div>
   </div>
 </section>
 
-<footer style="background-color: #d3d3d3; padding: 20px;">
-  <div class="container" style="display: flex; justify-content: space-between;">
+<footer>
+  <div class="container flex-row">
     <div>
-      <p>Contact Us:</p>
+      <p><strong>Contact Us:</strong></p>
       <p>Email: hbdraw@gmail.com</p>
       <p>Phone: 443-545-6551</p>
     </div>
